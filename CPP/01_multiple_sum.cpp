@@ -1,8 +1,7 @@
 #include <iostream>
 using namespace std;
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
-// 1부터 N까지의 M의 배수합  
+// 1. 1부터 N까지의 M의 배수합  
 int main(int argc, char** argv) {
 	
 	int n, m, i, sum = 0;
