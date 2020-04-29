@@ -1,17 +1,25 @@
 #include <iostream>
 using namespace std;
 
-// 4. ë‚˜ì´ ì°¨ì´  age_diff
-// Nëª…ì˜ ë‚˜ì´ê°€ ì£¼ì–´ì§„ë‹¤. 
-// ê°€ì¥ ë§ì€ ë‚˜ì´ì™€ ê°€ì¥ ì‘ì€ ë‚˜ì´ì˜ ì°¨ì´ë¥¼ ì¶œë ¥í•˜ì„¸ìš”. 
+// 4. ³ªÀÌ Â÷ÀÌ  age_diff
+// N¸íÀÇ ³ªÀÌ°¡ ÁÖ¾îÁø´Ù. 
+// °¡Àå ¸¹Àº ³ªÀÌ¿Í °¡Àå ÀÛÀº ³ªÀÌÀÇ Â÷ÀÌ¸¦ Ãâ·ÂÇÏ¼¼¿ä. 
+
+/* input.txt
+10
+13 15 34 23 45 65 33 11 26 42
+*/
 
 int main(int argc, char** argv) {
 	
+	// ÆÄÀÏÀÔÃâ·Â
+	//freopen("input.txt", "rt", stdin); //read text option
+	 
 	int totalNum, i, age;
-	int maxAge = -2147000000; // int ê°€ì¥ ì‘ì€ ìˆ˜ë¡œ ì´ˆê¸°í™”
+	int maxAge = -2147000000; // int °¡Àå ÀÛÀº ¼ö·Î ÃÊ±âÈ­
 	int minAge = 2147000000; 
 	
-	cin >> totalNum; // ì „ì²´ ì‚¬ëŒ ìˆ˜ 
+	cin >> totalNum; // ÀüÃ¼ »ç¶÷ ¼ö 
 	
 	for(i=1; i<=totalNum; i++) {
 		cin>>age;
@@ -29,4 +37,5 @@ int main(int argc, char** argv) {
 	
 	return 0;
 }
+
 
