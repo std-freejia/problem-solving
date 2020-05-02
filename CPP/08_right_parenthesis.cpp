@@ -10,9 +10,8 @@ using namespace std;
 int main(int argc, char** argv) {
 	
 	//freopen("input.txt", "rt", stdin);
-	// (()) 열면+1, 닫으면 -1 하면 되지 않을까?  
+	// (()) 열면+1, 닫으면 -1
 	
-
 	int i=0, num=0;
 	char arr[31];
 
@@ -26,16 +25,15 @@ int main(int argc, char** argv) {
 		}
 		
 		if(num<0){ 
-		// 음수가 되는 순간, 여는괄호부터 시작하는 이상한 순간. 
+		// 음수가 되는 순간은 여는괄호부터 시작하는 이상한 순간. 
 			break;
 		}
 	}
 	
-	if(num == 0){
+	if(num == 0){ // 올바른 괄호  
 		printf("YES\n");
 	}else{ // 음수 및 양수 처리  
 		printf("NO\n");
-	}
 	
 	return 0;
 }

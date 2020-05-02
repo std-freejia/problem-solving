@@ -12,6 +12,7 @@ int main(int argc, char** argv) {
 	
 	//줄바꿈까지 문자로 읽어야 하니까 파일을 읽는 gets() 이용
 	gets(input);
+	
 	for(i=0; input[i]!='\0'; i++){
 		if(input[i] != ' '){
 			if(input[i]>=65 && input[i]<=90){ // 대문자라면, 소문자로 변환( +32) 
