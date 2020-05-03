@@ -26,7 +26,7 @@ int digit_sum(int x){
 
 int main(int argc, char** argv) {
 	
-	int repeat=0, i=0, j=0, max=0, digit_res=0, max_num=0; 
+	int repeat=0, i=0, j=0, max=-2147000000, digit_res=0, max_num=0; 
 	//freopen("input.txt", "rt", stdin);
 	 
 	scanf("%d", &repeat);
