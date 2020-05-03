@@ -15,7 +15,6 @@
 15
 */
 
-
 int main(int argc, char** argv) {
 	
 	int num=0, count=0, i=0, length=1, ori_num=0, temp=0;
@@ -42,4 +41,28 @@ int main(int argc, char** argv) {
 	
 	return 0;
 }
+
+/* ¼±»ý´Ô ÄÚµå  
+
+int main(int argc, char** argv) {
+	
+	int num=0, count=0, i=0, temp=0;
+	//freopen("input.txt", "rt", stdin);
+
+	scanf("%d", &num);
+	
+	for(i=1; i<=num; i++){
+
+		temp = i;
+		
+		while(0 < temp){
+			temp = temp/10;
+			count++;
+		}
+	}
+	printf("%d\n", count);
+	return 0;
+}
+
+*/
 
