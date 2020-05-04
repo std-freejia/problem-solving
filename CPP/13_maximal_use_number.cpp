@@ -28,10 +28,11 @@ int main(int argc, char** argv) {
 		arr[num]++;
 	}
 	
+	// 개수가 같더라도 '큰 인덱스'가 답이되어야 하므로 반복문을 배열 뒤부터 순회.
 	for(i=sizeof(arr)/sizeof(int)-1; i>=0; i--){
 		if(max < arr[i]){
 			max = arr[i];
-			max_index = i;
+			max_index = i;  
 		}
 	}
 	 
