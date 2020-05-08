@@ -18,7 +18,7 @@ input.txt
 
 int main(int argc, char** argv) {
 
-	int repeat = 0, i=0, limit = 0, temp = 0, count = 0, max = 0;	
+	int repeat = 0, i=0, limit = 0, temp = 0, count = 0, max = -2147000000;	
 	//freopen("input.txt", "rt", stdin);	
 
 	scanf("%d %d", &repeat, &limit);
@@ -28,20 +28,17 @@ int main(int argc, char** argv) {
 		
 		if(temp>limit){
 			count++;
-		}else{
-			if(count>max){ // 갱신 여부 확인  
-				max = count;
+			if(count>max){
+				max=count;
 			}
+		}else{
 			count = 0;
 		}
 	}
 	
-	if(count>max){ // 갱신 여부 마지막으로 확인  
-		max = count;
-	}
-			
-	printf("%d", max);
-		
+	if(max==0) printf("-1\n");
+	else printf("%d\n", max);
+	
 	return 0;
 }
 
