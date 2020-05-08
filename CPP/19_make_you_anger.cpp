@@ -21,18 +21,16 @@ int main(int argc, char** argv) {
 
 	int repeat = 0, i=0, max=-2147000000, count=0;	
 	//freopen("input.txt", "rt", stdin);	
-
-	// 맨 뒤에서 부터 max가 갱신되는 횟수를 세면 된다. 
 	 
 	scanf("%d", &repeat);
 		
-	for(i=0; i<repeat; i++){
+	for(i=0; i<repeat; i++){ // 배열에 전부 저장  
 		scanf("%d", &student[i]);		
 	}
 	
 	max = student[repeat-1];
 	
-	for(i=repeat-1; i>0; i--){
+	for(i=repeat-1; i>0; i--){ 	// 배열 맨 뒤에서 부터 max가 갱신되는 횟수를 세면 된다. 
 		if(student[i] < student[i-1] && max < student[i-1]){
 			count++;
 			max = student[i-1];
