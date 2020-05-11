@@ -37,13 +37,13 @@ int main(int argc, char** argv) {
 		
 		if(num[i-1] <= num[i]){ //이전보다 같거나 크다 length++
 			length++;
-		}else{ // 아니다 length = 0 
-			if (max < length){
+			
+			if (max < length){ // max를 계속 갱신  
 				max = length;
 			}
+		}else{ // 아니다 length = 0 
 			length = 1;
 		}
-	
 		//printf("%d %d, length:%d\n", num[i-1], num[i], length);
 	}
 	
