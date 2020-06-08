@@ -2,7 +2,7 @@
 #include <string.h>
 #include <algorithm>
 #include <vector>
-using namespace;
+using namespace std;
 
 // 41. 연속된 자연수의 합  successive_sum
 
@@ -17,21 +17,15 @@ N=15이면,
 
 ▣ 입력설명
 첫 번째 줄에 양의 정수 N(7<=N<1000)이 주어진다.
-15
-
 
 ▣ 출력설명
 첫줄부터 각각의 경우의 수를 출력한다.
 맨 마지막 줄에 총 개수를 출력한다.
 
-7 + 8 = 15
-4 + 5 + 6 = 15
-1 + 2 + 3 + 4 + 5 = 15
-3
 
 */ 
 
-int main(int argc, int** argv){
+int main(int argc, char** argv){
 	
 	//freopen("input.txt", "rt", stdin);
 	int input, b = 1, cnt=0, temp, i=0;
@@ -47,10 +41,10 @@ int main(int argc, int** argv){
 		if(input % b == 0){ 
 			
 			for(i=1; i<b; i++){ // 분배할 숫자를 b 개를 써준다  
-				printf("%d + ", (a/b)+i);
+				printf("%d + ", (input/b)+i);
 			}
 			// 마지막 더하는 수와 원래숫자 출력  
-			printf("%d = %dn", (a/b)+i, temp);
+			printf("%d = %d\n", (input/b)+i, temp);
 			
 			cnt++;
 		}
