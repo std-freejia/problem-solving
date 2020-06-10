@@ -4,7 +4,7 @@
 #include <vector>
 using namespace std;
 
-// 숫자의 개수 count_of_number (정올) 2020-06-10
+// 숫자의 개수  (정올) 2020-06-10
 // http://www.jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=706&sca=2030
  
 
