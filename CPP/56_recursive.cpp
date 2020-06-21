@@ -22,7 +22,6 @@ int main(int argc, char** argv){
 	
 	freopen("input.txt", "rt", stdin);
 	
-	// 입력 받기 시작
 	scanf("%d", &num);   
 	
 	Print(num);

@@ -22,8 +22,7 @@ int main(int argc, char** argv){
 	int num;
 	
 	//freopen("input.txt", "rt", stdin);
-	
-	// 입력 받기 시작
+
 	scanf("%d", &num);   
 	
 	Binary(num);
