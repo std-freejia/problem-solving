@@ -25,13 +25,16 @@ void DFS(int level){
 	
 	if(level > num ){
 		
-		// 1로 선택한 집합만 출력  
+		// arr 에서 1로 선택한 레벨만 출력  
 		Print(); 
 		return; 
+		
 	}else{
-		arr[level] = 1; // 선택함  
+		
+		arr[level] = 1; // 선택함  (같은 레벨의 왼쪽자식) 
 		DFS(level+1);
-		arr[level] = 0; // 선택안함  
+		
+		arr[level] = 0; // 선택안함  (같은 레벨의 오른쪽자식)
 		DFS(level+1);
 	}
 
