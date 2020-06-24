@@ -7,7 +7,6 @@ using namespace std;
 // 59. 부분집합  (DFS 완전탐색)
 
 
-
 int arr[11], num;
 
 void Print(){
@@ -26,7 +25,7 @@ void DFS(int level){
 	
 	if(level > num ){
 		
-		// 합 체크 
+		// 1로 선택한 집합만 출력  
 		Print(); 
 		return; 
 	}else{
