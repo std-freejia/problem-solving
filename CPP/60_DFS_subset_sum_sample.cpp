@@ -14,6 +14,10 @@ using namespace std;
 일단 모든 요소의 합을 total 변수에 저장한다. 
 하나의 부분집합을 만들고 합을 구하고, 그 합을 total에서 뺀다.  그 값이 같으면 "YES"  
 
+유의할 것.  
+누적하고 있는 부분집합의 합이 total/2 를 초과하는 순간, 더 누적할 필요가 없다. 
+
+
 */
 
 int n, a[11], total = 0; 
@@ -21,12 +25,15 @@ bool flag_end = false;
 
 void DFS(int length, int sum){
 
-	if(length == n+1){
+	if(sum > total/2) return;
+
+	if(flag_end == true) return;  
+
+	if(length == n+1){  
 		// 합을 비교해본다. 
 		if((total-sum) == sum){ // 부분집합의 합과, 나머지집합의 합을 비교  
 			flag_end = true;
 		}
-		return; 
 	
 	}else{
 	
@@ -34,7 +41,6 @@ void DFS(int length, int sum){
 		DFS(length+1, sum);  // 현재 인덱스 원소를 집합원소로 사용 안함. (누적 안하고 지나감) 
 
 	}
-		
 }
 
 int main(void){
@@ -57,6 +63,7 @@ int main(void){
 	} else{
 		printf("NO");
 	}
+	
 	return 0;
 } 
 
