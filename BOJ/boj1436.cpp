@@ -20,11 +20,9 @@ int main(void) {
 
   while(++num){
     s = to_string(num); // int to string
-
     if(s.find(target) != string::npos) ++count; // 타겟이 존재한다면 카운팅한다.
     if(count == n) break;
   }
   cout << num;
-
   return 0;
 }
