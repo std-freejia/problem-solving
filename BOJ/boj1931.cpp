@@ -1,27 +1,31 @@
-/** 비밀번호 찾기
- * https://www.acmicpc.net/problem/17219
- * http://boj.kr/6193d3d02aee41a1a5b6bc7d78c3583d
+/** 회의실 배정
+ https://www.acmicpc.net/problem/1931
+ http://boj.kr/44982c2f9d57425e91c7209c2d527bb4
  */
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, m;
-string address, password;
-map<string, string> smap;
+int n, cnt;
 
-int main(void) {
+int main(void){
   ios::sync_with_stdio(0);
   cin.tie(0);
 
-  cin >> n >> m;
-  while(n--){
-    cin >> address >> password;
-    smap.insert({address, password});
-  }
-  while(m--){
-    cin >> address;
-    cout << smap[address] << '\n';
-  }
+  cin >> n;
+  vector<pair<int,int>> v(n);
 
+  for(int i = 0; i < n; i++){
+    cin >> v[i].second >> v[i].first; // <종료시간, 시작시간>
+  }
+  sort(v.begin(), v.end());  // '시작시간' 기준으로 정렬
+
+  int temptime = 0;
+  for(int i = 0; i < n; i++){
+    if(temptime <= v[i].second){
+      temptime = v[i].first;
+      cnt++;
+    }
+  }
+  cout << cnt;
   return 0;
 }
