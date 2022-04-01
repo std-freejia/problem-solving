@@ -1,42 +1,46 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool cmp(vector<int> &a, vector<int> &b){
-  return a[2] < b[2];
-}
-int get_parent(vector<int> &parent, int x){
-  // 부모노드가 자신이라면 자신을 리턴
-  if(parent[x] == x) return x;
-  // 부모노드가 자신이 아니라면, 최상위 부모 찾기
-  return parent[x] = get_parent(parent, parent[x]);
+// 크루스칼 알고리즘
+int get_parent(vector<int> &parent, int a){
+  if(parent[a] == a) return a; // 부모가 자신이라면, 자신을 리턴
+  return parent[a] = get_parent(parent, parent[a]); // 최상위 부모 찾기
 }
 
 void union_parent(vector<int> &parent, int a, int b){
   a = get_parent(parent, a);
   b = get_parent(parent, b);
   // 작은 노드쪽의 부모로 병합
-  a < b ? parent[b] = a : parent[a] = b;
+  (a < b) ? parent[b] = a : parent[a] = b;
 }
-bool find(vector<int> &parent, int a, int b){
-  a = get_parent(parent, a);
-  b = get_parent(parent, b);
-  return a == b; // 비교 내용을 리턴, 사이클 방지용
+
+bool find(vector<int> &v, int a, int b){
+  a = get_parent(v, a);
+  b = get_parent(v, b);
+  return a == b; // 사이클 방지
 }
-// 크루스칼 알고리즘 : 비용이 적은 순으로 costs 정렬
+
+bool cmp(vector<int> &a, vector<int> &b){
+  return a[2] < b[2];
+}
+
 int solution(int n, vector<vector<int>> costs) {
   int answer = 0, maxNum = 0;
+  vector<pair<int,int>> co;
 
+  // 비용 오름차순 정렬
   sort(costs.begin(), costs.end(), cmp);
   for(auto c : costs) if(maxNum < c[1]) maxNum = c[1];
 
-  vector<int> parent; // i번째 노드의 부모노드를 저장하는 parent 벡터
-  for(int i = 0; i <= maxNum; i++) parent.push_back(i);
+  // i번째 노드의 부모 노드를 저장하는 parent 벡터
+  vector<int> parent;
+  for(int i = 0; i <= maxNum; i++ ) parent.push_back(i);
 
   for(auto c : costs){
-    // 두 개의 부모 노드가 다르다면 (사이클 없다면)
+    // 두 개의 부모 노드가 다르다면, 사이클 X
     if(!find(parent, c[0], c[1])){
       answer += c[2]; // 결과에 가중치 추가
-      union_parent(parent, c[0], c[1]); // 부모노드 병합
+      union_parent(parent, c[0], c[1]);
     }
   }
   return answer;
